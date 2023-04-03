@@ -4,7 +4,7 @@ import SearchButtons from "../searchbuttons/SearchButtons";
 import PageNumbers from "../pagenumbers/PageNumbers";
 import fetch from "node-fetch";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://letsgoparty-backend.netlify.app/";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
