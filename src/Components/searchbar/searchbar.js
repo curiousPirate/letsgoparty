@@ -4,7 +4,7 @@ import SearchButtons from "../searchbuttons/SearchButtons";
 import PageNumbers from "../pagenumbers/PageNumbers";
 import fetch from "node-fetch";
 
-const API_BASE_URL = "https://letsgoparty-backend.netlify.app";
+const API_BASE_URL = "https://letsgoparty.netlify.app";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -20,7 +20,8 @@ const SearchBar = () => {
     }&source=nodejs&output=json&api_key=348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64`;
     const headers = {
       "Content-Type": "application/json",
-      Authorization: "Bearer 348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64",
+      Authorization:
+        "Bearer 348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64",
       Accept: "application/json",
     };
 

@@ -4,3 +4,10 @@
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Methods = "GET"
     Access-Control-Allow-Headers = "Content-Type"
+
+
+[[redirects]]
+  from = "/search/*"
+  to = "https://serpapi.com/:splat"
+  status = 200
+  headers = { Access-Control-Allow-Origin = "*" }
