@@ -22,9 +22,12 @@ const SearchBar = () => {
       "Content-Type": "application/json",
       Authorization:
         "Bearer 348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64",
+      Accept: "application/json",
     };
-    const response = await fetch(url);
+
+    const response = await fetch(url, { headers });
     const data = await response.json();
+
     setResults(data.events_results);
     setShowComponents(true);
   };
