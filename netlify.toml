@@ -1,4 +1,6 @@
 [[redirects]]
   from = "/search"
-  to = "https://serpapi.com/:splat"
+  to = "https://serpapi.com/search?q=:query&engine=google_events&htichips=:filter&start=:pageNumber&source=nodejs&output=json&api_key=348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64"
   status = 200
+
+
