@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/search"
-  to = "/search"
+  to = "/https://serpapi.com/:splat"
   status = 200
