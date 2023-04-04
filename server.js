@@ -3,7 +3,7 @@ const cors = require("cors");
 const fetch = require("node-fetch");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 app.use(cors());
 
@@ -19,11 +19,19 @@ app.get("/search", async (req, res) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    res.json(data);
+    res.json(data.events_results);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }
+  // try {
+  //   const response = await fetch(url, { headers });
+  //   const data = await response.json();
+  //   res.send(data.events_results);
+  // } catch (error) {
+  //   console.log(error);
+  //   res.status(500).send("An error occurred while searching for events.");
+  // }
 });
 
 app.listen(port, () => {
