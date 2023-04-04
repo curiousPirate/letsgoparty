@@ -19,7 +19,7 @@ app.get("/search", async (req, res) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    res.json(data.events_results);
+    res.json(data);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
