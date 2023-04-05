@@ -48,7 +48,6 @@ export default function Header() {
               }`}
             />
           </button>
-
           <ul
             id="menu"
             className={`flex flex-col items-center justify-between min-h-[250px] ${
@@ -57,7 +56,7 @@ export default function Header() {
           >
             <li className="my-8 text-4xl cursor-pointer">
               <Link
-                to="contact-us"
+                to="home"
                 smooth={true}
                 offset={-100}
                 duration={500}
@@ -68,7 +67,7 @@ export default function Header() {
             </li>
             <li className="my-8 text-4xl cursor-pointer">
               <Link
-                to="contact-us"
+                to="search-button"
                 smooth={true}
                 offset={-100}
                 duration={500}
@@ -79,7 +78,7 @@ export default function Header() {
             </li>
             <li className="my-8 text-4xl cursor-pointer">
               <Link
-                to="contact-us"
+                to="faves"
                 smooth={true}
                 offset={-100}
                 duration={500}

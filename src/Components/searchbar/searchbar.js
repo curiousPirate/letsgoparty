@@ -61,6 +61,7 @@ const SearchBar = () => {
           type="text"
           placeholder="Search Events, Clubs, Raves & much more!"
           aria-label="Search"
+          id="search-button"
           value={query}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
