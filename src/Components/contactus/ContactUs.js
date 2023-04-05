@@ -37,7 +37,9 @@ function ContactUs() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
+      <h2 className="text-3xl font-bold mb-8" id="contact-us">
+        Contact Us
+      </h2>
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="mb-4">
           <input

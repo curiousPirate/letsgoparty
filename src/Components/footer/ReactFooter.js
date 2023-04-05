@@ -15,7 +15,6 @@ const ReactFooter = () => {
           <div className="col-span-4">
             <div
               className="col-span-6 text-center md:text-left md:col-span-3"
-              id="contact-us"
             >
               <ContactUs />
             </div>

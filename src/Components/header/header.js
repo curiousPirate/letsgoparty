@@ -1,11 +1,21 @@
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const genericHamburgerLine = `h-1 w-12 my-1 rounded-full bg-white border-0 transition ease transform duration-300`;
+  const closeMenu = () => {
+    setIsNavOpen(false);
+    document.getElementById("menu").classList.add("hideMenuNav");
+  };
+
+  const toggleMenu = () => {
+    setIsNavOpen((prev) => !prev);
+    document.getElementById("menu").classList.toggle("hideMenuNav");
+  };
 
   return (
-    <div className="flex items-center justify-between bg-cyan-950 text-white py-6 px-6">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-cyan-950 text-white py-6 px-6">
       <img
         src={require("../logodesign/logo.png")}
         className="w-20 h-20"
@@ -15,7 +25,7 @@ export default function Header() {
         <section className="flex">
           <button
             className="flex flex-col h-12 w-12 rounded justify-center items-center group"
-            onClick={() => setIsNavOpen((prev) => !prev)}
+            onClick={toggleMenu}
             style={{ zIndex: 2 }}
           >
             <div
@@ -40,21 +50,54 @@ export default function Header() {
           </button>
 
           <ul
+            id="menu"
             className={`flex flex-col items-center justify-between min-h-[250px] ${
               isNavOpen ? "showMenuNav" : "hideMenuNav"
             }`}
           >
-            <li className="border-b border-white my-8 text-4xl">
-              <a href="/about">ABOUT</a>
+            <li className="my-8 text-4xl cursor-pointer">
+              <Link
+                to="contact-us"
+                smooth={true}
+                offset={-100}
+                duration={500}
+                onClick={closeMenu}
+              >
+                HOME
+              </Link>
             </li>
-            <li className="border-b border-white my-8 text-4xl">
-              <a href="/portfolio">SEARCH EVENTS</a>
+            <li className="my-8 text-4xl cursor-pointer">
+              <Link
+                to="contact-us"
+                smooth={true}
+                offset={-100}
+                duration={500}
+                onClick={closeMenu}
+              >
+                SEARCH
+              </Link>
             </li>
-            <li className="border-b border-white my-8 text-4xl">
-              <a href="/contact">SAVED EVENTS</a>
+            <li className="my-8 text-4xl cursor-pointer">
+              <Link
+                to="contact-us"
+                smooth={true}
+                offset={-100}
+                duration={500}
+                onClick={closeMenu}
+              >
+                FAVOURITES
+              </Link>
             </li>
-            <li className="border-b border-white my-8 text-4xl">
-              <a href="/contact">CONTACT US</a>
+            <li className="my-8 text-4xl cursor-pointer">
+              <Link
+                to="contact-us"
+                smooth={true}
+                offset={-100}
+                duration={500}
+                onClick={closeMenu}
+              >
+                CONTACT US
+              </Link>
             </li>
           </ul>
         </section>
