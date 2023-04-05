@@ -3,5 +3,3 @@
   to = "https://serpapi.com/search"
   status = 200
   headers = { Access-Control-Allow-Origin = "*" }
-
-

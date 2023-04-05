@@ -1,9 +1,8 @@
-import React from "react";
 import ContactUs from "../contactus/ContactUs";
 
 const ReactFooter = () => {
   return (
-    <footer className="bg-cyan-950 text-gray-50 py-6">
+    <footer className="flex flex-col sm:flex-row bg-cyan-950 text-gray-50 py-6">
       <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
         <div className="grid grid-cols-12 gap-4">
           <div className="col-span-4">

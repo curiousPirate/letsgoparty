@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactFooter from './Components/footer/ReactFooter';
 import SearchBar from './Components/searchbar/searchbar'
-import Navbar from './Components/landing/Navbar';
+import Header from './Components/header/header'
 import Hero from './Components/landing/Hero';
 import About from './Components/landing/About';
 import SavedCards from "./Components/savedcards/SavedCards";
@@ -12,7 +12,7 @@ const [setFilter] = useState("");
 
   return (
     <div className="App">
-      <Navbar />
+      <Header />
       <Hero />
       <About />
       <div>

@@ -38,12 +38,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="fav"
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                >
+                <Link to="fav" smooth={true} offset={-100} duration={500}>
                   FAVOURITES
                 </Link>
               </li>
@@ -59,8 +54,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="hidden md:flex pr-4">
-          </div>
+          <div className="hidden md:flex pr-4"></div>
           <div className="md:hidden" onClick={handleClick}>
             {!nav ? <MenuIcon className="w-5" /> : <XIcon className="w-5" />}
           </div>
