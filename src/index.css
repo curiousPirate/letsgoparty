@@ -93,3 +93,40 @@ h1:focus {
     box-shadow: none;
   }
 }
+
+@keyframes animate-tick {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tick-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  transition: all 1s ease-out;
+}
+
+.tick-line {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  transition: all 0.3s ease-out;
+}
+
+.animate-tick .tick-circle {
+  stroke-dashoffset: 0;
+}
+
+.animate-tick .tick-line {
+  stroke-dashoffset: 0;
+}
