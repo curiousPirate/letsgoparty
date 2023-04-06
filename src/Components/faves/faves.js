@@ -43,11 +43,11 @@ function Faves({
     <>
       {isFave || cards.some((card) => card.id === id) ? (
         <button onClick={handleFaveClick} style={{ border: "none" }}>
-          <CiBeerMugFull className="bg-cyan-950 text-yellow-500 h-10 w-10" />
+          <CiBeerMugFull className="bg-white text-yellow-600 h-10 w-10" />
         </button>
       ) : (
         <button onClick={handleFaveClick} style={{ border: "none" }}>
-          <CiBeerMugFull className="bg-cyan-950 hover:bg-cyan-950 color-cyan-950 border-black h-10 w-10" />
+          <CiBeerMugFull className="bg-white hover:bg-cyan-950 color-cyan-950 border-cyan-950 h-10 w-10" />
         </button>
       )}
     </>
