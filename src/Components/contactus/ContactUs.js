@@ -59,7 +59,7 @@ const handleSubmit = async (e) => {
 };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center py-9">
       <h2
         className="text-3xl font-bold mb-8 text-white my-6 underline
         underline-offset-8"

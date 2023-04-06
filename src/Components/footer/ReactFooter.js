@@ -3,7 +3,18 @@ import ContactUs from "../contactus/ContactUs";
 const ReactFooter = () => {
   return (
     <div>
-      <ContactUs />
+      <div className="flex flex-col-reverse items-center justify-around">
+        <div>
+          <img
+            src={require("../logodesign/logo.png")}
+            className="logo w-80 md:w-120"
+            alt="logo"
+          />
+        </div>
+        <div className="w-full">
+          <ContactUs />
+        </div>
+      </div>
       <section className="bg-cyan-950">
         <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
           <div className="flex justify-center mt-8 space-x-6">
@@ -16,7 +27,7 @@ const ReactFooter = () => {
               <span className="sr-only">GitHub</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7"
+                className="h-7 w-7"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -32,7 +43,7 @@ const ReactFooter = () => {
               <span className="sr-only">Linkedin</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7"
+                className="h-7 w-7"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -41,7 +52,7 @@ const ReactFooter = () => {
             </a>
           </div>
           <p className="mt-8 text-base leading-6 text-center text-gray-400">
-            © 2023 Let's Go Part!, Inc. All rights reserved.
+            © 2023 Let's Go Party!, Inc. All rights reserved.
           </p>
         </div>
       </section>
