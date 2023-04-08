@@ -7,14 +7,13 @@ function SavedCards() {
   useEffect(() => {
     const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
     setSavedCards(faveCards);
-  }, []);
 
-  useEffect(() => {
-    window.addEventListener("storage", () => {
-      const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
-      setSavedCards(faveCards);
-    });
-    return () => window.removeEventListener("storage", () => {});
+    const intervalId = setInterval(() => {
+      const updatedCards = JSON.parse(localStorage.getItem("faves") || "[]");
+      setSavedCards(updatedCards);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
@@ -34,9 +33,8 @@ function SavedCards() {
             image={savedCard.image}
             description={savedCard.description}
             event_location_map={savedCard.event_location_map}
+            handleRemoveFaveCard={savedCard.handleRemoveCard}
           />
-          <div className="flex justify-center items-center mt-2 remove">
-          </div>
         </div>
       ))}
     </div>
@@ -44,3 +42,4 @@ function SavedCards() {
 }
 
 export default SavedCards;
+
