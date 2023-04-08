@@ -10,7 +10,6 @@ function Faves({
   image,
   description,
   event_location_map,
-  setSavedCards,
   cards = [],
 }) {
   const [isFave, setIsFave] = useState(
@@ -55,7 +54,6 @@ const onAdd = (card) => {
   const handleRemoveFaveCard = (id) => {
     const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
     const newFaveCards = faveCards.filter((card) => card.id !== id);
-    setSavedCards(newFaveCards);
     localStorage.setItem("faves", JSON.stringify(newFaveCards));
     localStorage.removeItem(id);
   };
