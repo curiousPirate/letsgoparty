@@ -49,16 +49,33 @@ function SavedCards() {
       {savedCards.length === 0 && (
         <p className="text-center text-lg">No saved events yet.</p>
       )}
-      {savedCards.map((card) => (
-        <div key={card.id}>
-          <Card {...card} setSavedCards={setSavedCards}>
+      {savedCards.map((savedCard) => (
+        <div key={savedCard.id}>
+          <Card
+            title={savedCard.title}
+            id={savedCard.id}
+            date={savedCard.date}
+            address={savedCard.address}
+            link={savedCard.link}
+            image={savedCard.image}
+            description={savedCard.description}
+            event_location_map={savedCard.event_location_map}
+          />
+          <div className="flex justify-center items-center mt-2 remove">
             <Faves
-              {...card}
+              className="remove"
+              title={savedCard.title}
+              id={savedCard.id}
+              date={savedCard.date}
+              address={savedCard.address}
+              link={savedCard.link}
+              image={savedCard.image}
+              description={savedCard.description}
+              event_location_map={savedCard.event_location_map}
               setSavedCards={setSavedCards}
-              handleFaveClick={handleFaveClick}
-              handleRemoveFaveCard={handleRemoveFaveCard}
+              cards={savedCards}
             />
-          </Card>
+          </div>
         </div>
       ))}
     </div>

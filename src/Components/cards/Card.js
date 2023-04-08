@@ -9,8 +9,9 @@ function Card({
   image,
   description,
   event_location_map,
-  id,
 }) {
+  const id = `${title}-${date}-${address}`;
+
   return (
     <div class="flex flex-col justify-center h-fit pt-6 pb-6">
       <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-1 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
@@ -75,5 +76,6 @@ function Card({
 }
 
 export default Card;
+
 
 

@@ -131,3 +131,9 @@ h1:focus {
   stroke-dashoffset: 0;
 }
 
+.remove {
+  background-color: #fff!important;
+  color: aqua;
+  border-color: #08f;
+
+}
