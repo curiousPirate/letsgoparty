@@ -17,15 +17,16 @@ const SearchBar = () => {
   const search = async (query, filter, pageNumber) => {
     const url = `${API_BASE_URL}/search?q=${query}&engine=google_events&htichips=${filter}&start=${
       (pageNumber - 1) * 10
-    }&source=nodejs&output=json&api_key=348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64`;
+    }&source=nodejs&output=json&api_key=4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e`;
     const headers = {
       "Content-Type": "application/json",
       Authorization:
-        "Bearer 348e8db09351ac50bd0d138aa02fa794c792d94070d5fc3a628ea00c94025b64",
+        "Bearer 4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e",
       Accept: "application/json",
     };
 
     const response = await fetch(url, { headers });
+
     const data = await response.json();
 
     setResults(data.events_results);
@@ -87,15 +88,15 @@ const SearchBar = () => {
       {showComponents && (
         <>
           <SearchButtons setFilter={handleButtonClick} />
-          <div className="flex flex-wrap justify-center">
-            {Array.isArray(results) &&
-              results.map((result) => <Card key={result.id} {...result} />)}
-          </div>
           <PageNumbers
             query={query}
             setResults={setResults}
             handlePageClick={handlePageClick}
           />
+          <div className="flex flex-wrap justify-center">
+            {Array.isArray(results) &&
+              results.map((result) => <Card key={result.id} {...result} />)}
+          </div>
         </>
       )}
     </div>
