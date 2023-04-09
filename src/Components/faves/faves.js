@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CiBeerMugFull } from "react-icons/ci";
 
+
 function Faves({
   title,
   id,
@@ -10,7 +11,6 @@ function Faves({
   image,
   description,
   event_location_map,
-  setSavedCards,
   cards = [],
 }) {
   const [isFave, setIsFave] = useState(
@@ -37,25 +37,23 @@ function Faves({
     }
   };
 
-const onAdd = (card) => {
-  const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
-  const existingCardIndex = faveCards.findIndex((c) => c.id === card.id);
-  if (existingCardIndex !== -1) {
-    // Replace existing card with new card
-    faveCards[existingCardIndex] = card;
-  } else {
-    // Add new card
-    faveCards.push(card);
-  }
-  localStorage.setItem("faves", JSON.stringify(faveCards));
-  localStorage.setItem(id, "true");
-};
-
+  const onAdd = (card) => {
+    const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
+    const existingCardIndex = faveCards.findIndex((c) => c.id === card.id);
+    if (existingCardIndex !== -1) {
+      // Replace existing card with new card
+      faveCards[existingCardIndex] = card;
+    } else {
+      // Add new card
+      faveCards.push(card);
+    }
+    localStorage.setItem("faves", JSON.stringify(faveCards));
+    localStorage.setItem(id, "true");
+  };
 
   const handleRemoveFaveCard = (id) => {
     const faveCards = JSON.parse(localStorage.getItem("faves") || "[]");
     const newFaveCards = faveCards.filter((card) => card.id !== id);
-    setSavedCards(newFaveCards);
     localStorage.setItem("faves", JSON.stringify(newFaveCards));
     localStorage.removeItem(id);
   };
@@ -76,3 +74,4 @@ const onAdd = (card) => {
 }
 
 export default Faves;
+
