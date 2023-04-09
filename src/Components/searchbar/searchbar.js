@@ -20,8 +20,6 @@ const SearchBar = () => {
     }&source=nodejs&output=json&api_key=4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e`;
     const headers = {
       "Content-Type": "application/json",
-      Authorization:
-        "Bearer 4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e",
       Accept: "application/json",
     };
 
