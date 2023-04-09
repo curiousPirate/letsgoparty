@@ -56,43 +56,20 @@ const SearchBar = () => {
 
   return (
     <div>
-      {/* <div className="flex items-center border-b-2 border-cyan-950 py-2">
-        <input
-          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-          type="text"
-          placeholder="Search Events, Clubs, Raves & much more!"
-          aria-label="Search"
-          id="search-button"
-          value={query}
-          onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
-        />
-        <button
-          className="flex-shrink-0 bg-cyan-950 hover:bg-cyan-800 border-cyan-950 hover:border-cyan-800 text-sm border-4 text-white py-1 px-2 rounded-xl focus:outline-none focus:shadow-outline"
-          type="button"
-          onClick={() => search(query, filter, pageNumber)}
-        >
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            className="w-6 h-6"
-          >
-            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-        </button>
-      </div> */}
-      <div className="min-h-screen bg-gray-100 flex flex-col justify-center">
+      <div className="bg-gray-100 flex flex-col justify-center">
         <div className="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
           <div className="overflow-hidden z-0 rounded-full relative p-3">
-            <form className="relative flex z-50 bg-white rounded-full">
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                search(query, filter, pageNumber);
+              }}
+              className="relative flex z-50 appearance-none bg-transparent rounded-full"
+            >
               <input
                 type="text"
-                placeholder="enter your search here"
-                className="rounded-full flex-1 px-6 py-4 text-gray-700 focus:outline-none"
+                placeholder="Search Events, Clubs, Raves & much more!"
+                className="rounded-full flex-1 px-6 py-4 text-black focus:outline-none"
                 aria-label="Search"
                 id="search-button"
                 value={query}
@@ -100,7 +77,7 @@ const SearchBar = () => {
                 onKeyDown={handleKeyDown}
               />
               <button
-                className="bg-indigo-500 text-white rounded-full font-semibold px-8 py-4 hover:bg-indigo-400 focus:bg-indigo-600 focus:outline-none"
+                className="text-white p-4 bg-cyan-950 rounded-full hover:text-cyan-950 hover:bg-white"
                 type="button"
                 onClick={() => search(query, filter, pageNumber)}
               >
@@ -124,7 +101,6 @@ const SearchBar = () => {
           </div>
         </div>
       </div>
-
       {showComponents && (
         <>
           <SearchButtons setFilter={handleButtonClick} />
