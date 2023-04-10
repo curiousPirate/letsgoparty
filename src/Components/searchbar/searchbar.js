@@ -184,7 +184,7 @@ const SearchBar = () => {
   };
 
   const handleDefaultSearch = async () => {
-  const results = await search("Events in India");
+  const results = await search("Events in India", "", "1");
   setSearchResults(results);
   };
 
