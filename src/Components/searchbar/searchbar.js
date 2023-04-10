@@ -184,7 +184,7 @@ const SearchBar = () => {
   };
 
   const handleDefaultSearch = async () => {
-  const results = await search("Events in India", "", "1");
+  const results = await search("Events in India", "date:today", "1");
   setSearchResults(results);
   };
 
@@ -213,7 +213,7 @@ const SearchBar = () => {
               <button
                 className="text-cyan-950 p-4 bg-white rounded-full hover:text-white hover:bg-blue-400 ml-2"
                 type="button"
-                onClick={() => search(query, filter, pageNumber)}
+                onClick={() => search(query, "date:today", "1")}
               >
                 <svg
                   fill="none"
