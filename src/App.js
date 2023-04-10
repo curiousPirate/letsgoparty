@@ -13,14 +13,15 @@ const [setFilter] = useState("");
   return (
     <div className="App">
       <Header />
-      <Hero />
       <About />
+
       <div>
         <div className="container mx-auto my-4 flex flex-col">
           <SearchBar setFilter={setFilter} />
         </div>
       </div>
       <SavedCards />
+      <Hero />
       <ReactFooter />
     </div>
   );

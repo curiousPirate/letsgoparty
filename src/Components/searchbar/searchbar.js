@@ -54,8 +54,8 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className="bg-gray-100 flex flex-col justify-center">
-        <div className="relative p-12 w-full sm:max-w-2xl sm:mx-auto">
+      <div className="flex flex-col justify-center">
+        <div className="relative p-12 w-max sm:w-full sm:mx-auto">
           <div className="overflow-hidden z-0 rounded-full relative p-3">
             <form
               onSubmit={(event) => {
@@ -75,7 +75,7 @@ const SearchBar = () => {
                 onKeyDown={handleKeyDown}
               />
               <button
-                className="text-white p-4 bg-cyan-950 rounded-full hover:text-cyan-950 hover:bg-white"
+                className="text-cyan-950 p-4 bg-white rounded-full hover:text-white hover:bg-blue-400 ml-2"
                 type="button"
                 onClick={() => search(query, filter, pageNumber)}
               >
