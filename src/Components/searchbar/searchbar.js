@@ -269,7 +269,9 @@ const SearchBar = () => {
       </div>
       {showComponents && (
         <>
-          <SearchButtons setFilter={handleButtonClick} />
+          <div className="flex justify-center">
+            <SearchButtons setFilter={handleButtonClick} />
+          </div>
           <div className="flex flex-wrap justify-center flex-col items-stretch h-full">
             {Array.isArray(results) &&
               results.map((result) => <Card key={result.id} {...result} />)}
