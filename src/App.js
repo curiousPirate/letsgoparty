@@ -14,7 +14,6 @@ const [setFilter] = useState("");
     <div className="App">
       <Header />
       <About />
-
       <div>
         <div className="container mx-auto my-4 flex flex-col">
           <SearchBar setFilter={setFilter} />

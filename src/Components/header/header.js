@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between bg-cyan-950 text-white py-6 px-6">
+    <div className="sticky top-0 z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6">
       <img
         src={require("../design/logo.png")}
         className="w-20 h-20"
@@ -112,7 +112,8 @@ export default function Header() {
         height: 100vh;
         top: 0;
         left: 0;
-        background: rgb(8 51 68);
+        background-color: rgba(8, 51, 68);
+        backdrop-filter: blur(10px);
         z-index: 1;
         display: flex;
         flex-direction: column;
