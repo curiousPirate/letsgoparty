@@ -13,7 +13,7 @@ const About = () => {
       <div className="absolute inset-0 z-0 bg-cover bg-center">
         <img src={require("../design/bg-img.jpg")} alt="bg-pic"/>
       </div>
-      <div className="inset-0 z-10 bg-gray-900 bg-opacity-75"></div>
+      <div className="absolute inset-0 z-10 bg-gray-900 bg-opacity-75"></div>
       <div className="z-20 w-full max-w-screen-lg flex flex-col items-center justify-center">
         <div className="shadow-2xl rounded-lg w-full sm:w-4/5 md:h-96 lg:h-full bg-cover bg-center flex sm:flex-row flex-col ">
           <div className="sm:w-1/2 w-fit flex flex-col justify-center items-center">

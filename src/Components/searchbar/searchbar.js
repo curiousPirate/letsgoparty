@@ -56,7 +56,8 @@ const SearchBar = () => {
     <div>
       <div
         className="h-fit flex flex-col justify-center"
-        id="search-btn">
+        id="search-btn"
+        >
         <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto">
           <div className="overflow-hidden z-0 rounded-full relative p-3">
             <form

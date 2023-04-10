@@ -14,7 +14,7 @@ function Card({
 
   return (
     <div class="flex flex-col justify-center h-fit pt-6 pb-6">
-      <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-1 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
+      <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-1 max-w-xs md:max-w-3xl mx-auto border border-white bg-white items-stretch h-full">
         <div class="w-full md:w-1/3 bg-white grid place-items-center object-cover">
           <img
             src={image}
