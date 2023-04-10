@@ -122,7 +122,7 @@
 
 // export default SearchBar;
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../cards/Card";
 import SearchButtons from "../searchbuttons/SearchButtons";
 import PageNumbers from "../pagenumbers/PageNumbers";
@@ -136,10 +136,15 @@ const SearchBar = () => {
   const [showComponents, setShowComponents] = useState(false);
   const [filter, setFilter] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    handleDefaultSearch();
+  }, []);
 
   const search = async (query, filter, pageNumber) => {
-    setIsLoading(true);
+    setLoading(true);
     const url = `${API_BASE_URL}/search?q=${query}&engine=google_events&htichips=${filter}&start=${
       (pageNumber - 1) * 10
     }&source=nodejs&output=json&api_key=4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e`;
@@ -154,7 +159,7 @@ const SearchBar = () => {
 
     setResults(data.events_results);
     setShowComponents(true);
-    setIsLoading(false);
+    setLoading(false);
   };
 
   const handleInputChange = (event) => {
@@ -178,11 +183,9 @@ const SearchBar = () => {
     search(query, filter, page);
   };
 
-  const handleDefaultSearch = () => {
-    setQuery("Events in India");
-    setFilter("");
-    setPageNumber(1);
-    search("Events in India", "", 1);
+  const handleDefaultSearch = async () => {
+  const results = await search("Events in India");
+  setSearchResults(results);
   };
 
   return (
