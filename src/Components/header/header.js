@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <div className="sticky top-0 z-50 flex items-center justify-between bg-cyan-950 text-white py-6 px-6">
       <img
-        src={require("../logodesign/logo.png")}
+        src={require("../design/logo.png")}
         className="w-20 h-20"
         alt="logo"
       />

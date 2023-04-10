@@ -1,16 +1,19 @@
 import React from 'react'
 
+function scrollToSearch() {
+  const searchElement = document.getElementById('search-btn');
+  if (searchElement) {
+    searchElement.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
 const About = () => {
     return (
     <div className="relative flex flex-col items-center justify-center min-h-screen">
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')",
-        }}
-      ></div>
-      <div className="absolute inset-0 z-10 bg-gray-900 bg-opacity-75"></div>
+      <div className="absolute inset-0 z-0 bg-cover bg-center">
+        <img src={require("../design/bg-img.jpg")} alt="bg-pic"/>
+      </div>
+      <div className="inset-0 z-10 bg-gray-900 bg-opacity-75"></div>
       <div className="z-20 w-full max-w-screen-lg flex flex-col items-center justify-center">
         <div className="shadow-2xl rounded-lg w-full sm:w-4/5 md:h-96 lg:h-full bg-cover bg-center flex sm:flex-row flex-col ">
           <div className="sm:w-1/2 w-fit flex flex-col justify-center items-center">
@@ -26,20 +29,9 @@ const About = () => {
             <p className="text-white text-lg md:text-xl lg:text-2xl mb-4">
               An all-powerful app that can be used to look for the happening events, trending clubs, bucket list worth concerts, wild raves, mouth-watering food events and everything in between. We guarantee you'll love life after using it!
             </p>
-            <button className="opacity-75 bg-gray-100 hover:bg-cyan-900 hover:text-white text-sm font-bold py-2 px-4 rounded inline-flex items-center self-end">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+            <button className="opacity-75 bg-gray-100 hover:bg-cyan-900 hover:text-white text-sm font-bold py-2 px-4 rounded inline-flex items-center self-end" type="button" onClick={() => scrollToSearch()}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span>GET STARTED!</span>
             </button>

@@ -20,8 +20,8 @@ const [setFilter] = useState("");
           <SearchBar setFilter={setFilter} />
         </div>
       </div>
-      <SavedCards />
       <Hero />
+      <SavedCards />
       <ReactFooter />
     </div>
   );

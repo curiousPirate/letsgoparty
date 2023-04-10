@@ -54,8 +54,10 @@ const SearchBar = () => {
 
   return (
     <div>
-      <div className="flex flex-col justify-center">
-        <div className="relative p-12 w-max sm:w-full sm:mx-auto">
+      <div
+        className="h-fit flex flex-col justify-center"
+        id="search-btn">
+        <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto">
           <div className="overflow-hidden z-0 rounded-full relative p-3">
             <form
               onSubmit={(event) => {

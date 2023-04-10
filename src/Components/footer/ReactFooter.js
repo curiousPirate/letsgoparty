@@ -6,7 +6,7 @@ const ReactFooter = () => {
       <div className="flex flex-col-reverse items-center justify-around">
         <div>
           <img
-            src={require("../logodesign/logo.png")}
+            src={require("../design/logo.png")}
             className="logo w-80 md:w-120"
             alt="logo"
           />
