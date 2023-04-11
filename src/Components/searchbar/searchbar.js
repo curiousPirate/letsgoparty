@@ -6,7 +6,7 @@ import fetch from "node-fetch";
 
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("Events in India");
+  const [query, setQuery] = useState("California");
   const [results, setResults] = useState([]);
   const [showComponents, setShowComponents] = useState(false);
   const [filter, setFilter] = useState("");
@@ -43,9 +43,8 @@ const SearchBar = () => {
   };
 
   const handleKeyDown = (event) => {
-
     if (event.key === "Enter") {
-      search(query, filter, pageNumber);
+      search(query, filter, 1);
     }
   };
 
