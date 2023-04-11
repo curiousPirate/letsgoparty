@@ -31,10 +31,9 @@ const SearchBar = () => {
     setShowComponents(true);
   };
 
-
     useEffect(() => {
       search(query, filter, pageNumber);
-    }, []);
+    }, [query, filter, pageNumber]);
 
 
   const handleInputChange = (event) => {
@@ -48,16 +47,18 @@ const SearchBar = () => {
     }
   };
 
-  const handleButtonClick = (filter) => {
-    setFilter(filter);
-    setPageNumber(1);
-    search(query, filter, 1);
+
+  const handleButtonClick = () => {
+    setFilter("");
+    search(query, "", 1);
   };
 
   const handlePageClick = (page) => {
     setPageNumber(page);
     search(query, filter, page);
+    document.getElementById("search-button").scrollIntoView({ behavior: "smooth" });
   };
+
 
   return (
     <div>
@@ -84,7 +85,7 @@ const SearchBar = () => {
               <button
                 className="text-cyan-950 p-4 bg-white rounded-full hover:text-white hover:bg-blue-400 ml-2"
                 type="button"
-                onClick={() => search(query, "date:today", "1")}
+                onClick={() => search(query, "", "1")}
               >
                 <svg
                   fill="none"

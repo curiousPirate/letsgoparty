@@ -20,7 +20,6 @@ const SearchButtons = ({ setFilter }) => {
           className={`${
             selectedButton === "date:today" ? "selected bg-slate-500" : ""
           }`}
-          id="initialBtn"
         >
           Today's Events
         </option>
