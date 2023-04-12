@@ -14,12 +14,10 @@ const SearchBar = () => {
 
   const API_BASE_URL = "";
 
-
   const search = async (query, filter, pageNumber) => {
-
     const url = `${API_BASE_URL}/search?q=${query}&engine=google_events&htichips=${filter}&start=${
       (pageNumber - 1) * 10
-    }&source=nodejs&output=json&api_key=4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e`;
+    }&source=nodejs&output=json&api_key=b40cf362d7bd15ae459eac770677ffc8e1e890ac7291ecb0dc55b3b6cee66b70`;
     const headers = {
       "Content-Type": "application/json",
       Accept: "application/json",
@@ -33,10 +31,9 @@ const SearchBar = () => {
     setShowComponents(true);
   };
 
-    useEffect(() => {
-      search(query, filter, pageNumber);
-    }, [query, filter, pageNumber]);
-
+  useEffect(() => {
+    search(query, filter, pageNumber);
+  }, [filter, pageNumber]);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -48,7 +45,6 @@ const SearchBar = () => {
     }
   };
 
-
   const handleButtonClick = () => {
     setFilter("");
     search(query, "", 1);
@@ -57,21 +53,26 @@ const SearchBar = () => {
   const handlePageClick = (page) => {
     setPageNumber(page);
     search(query, filter, page);
-    document.getElementById("search-button").scrollIntoView({ behavior: "smooth" });
+    document
+      .getElementById("search-button")
+      .scrollIntoView({ behavior: "smooth" });
   };
-
 
   return (
     <div>
       <div className="h-fit flex flex-col justify-center" id="search-btn">
-        <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto">
-          <div className="overflow-hidden z-0 rounded-full relative p-3">
+        <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto ">
+          <div
+            className="overflow-hidden z-0 rounded-full p-3 w-10/12"
+            id="stickySearch"
+            style={{ position: "absolute", top: 20, zIndex: 50 }}
+          >
             <form
               onSubmit={(event) => {
                 event.preventDefault();
                 search(query, filter, pageNumber);
               }}
-              className="relative flex z-50 appearance-none bg-transparent rounded-full"
+              className="relative appearance-none bg-transparent rounded-full z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-2 px-2"
             >
               <input
                 type="text"
@@ -113,7 +114,7 @@ const SearchBar = () => {
           <div className="flex justify-center">
             <SearchButtons setFilter={handleButtonClick} />
           </div>
-          <div className="flex flex-wrap justify-center flex-col items-stretch h-full">
+          <div className="flex flex-wrap justify-center flex-col items-stretch h-full z-10">
             {Array.isArray(results) &&
               results.map((result) => <Card key={result.id} {...result} />)}
           </div>

@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6">
+    <div className="fixed w-full z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6 top-0">
       <img
         src={require("../design/logo.png")}
         className="w-20 h-20"
@@ -26,7 +26,7 @@ export default function Header() {
           <button
             className="flex flex-col h-12 w-12 rounded justify-center items-center group"
             onClick={toggleMenu}
-            style={{ zIndex: 2 }}
+            style={{ zIndex: 20 }}
           >
             <div
               className={`${genericHamburgerLine} ${
@@ -114,7 +114,7 @@ export default function Header() {
         left: 0;
         background-color: rgba(8, 51, 68);
         backdrop-filter: blur(10px);
-        z-index: 1;
+        z-index: 10;
         display: flex;
         flex-direction: column;
         justify-content: center;

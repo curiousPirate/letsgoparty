@@ -3,58 +3,15 @@
 @import 'tailwindcss/utilities';
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #083344;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-  @layer base {
-    li {
-      @apply p-4
-    }
-  }
-
-  /* For the buttons color change when selected and in active state */
-  .selected {
-    background-color: white;
-    color: #163242;
-    border-color: #163242;
-  }
-
 h1 {
-  font-family: 'Segoe UI';
-  font-size: 5rem;
-  font-weight: 200;
-  font-style: italic;
-  color: #fff;
   padding: 4rem 6rem 5.5rem;
   border: 0.4rem solid #fff;
   border-radius: 2rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;
-}
-
-h1::-moz-selection {
-  background-color: #08f;
-  color: rgb(255, 39, 11);
-}
-
-h1::selection {
-  background-color: #08f;
-  color: rgb(255, 39, 11);
-}
-
-h1:focus {
-  outline: none;
 }
 
 @keyframes flicker {
@@ -67,15 +24,6 @@ h1:focus {
   54%,
   56%,
   100% {
-
-    text-shadow:
-      -0.2rem -0.2rem 1rem #fff,
-      0.2rem 0.2rem 1rem #fff,
-      0 0 2rem rgb(245, 34, 252),
-      0 0 4rem rgb(245, 34, 252),
-      0 0 6rem rgb(245, 34, 252),
-      0 0 8rem rgb(245, 34, 252),
-      0 0 10rem rgb(245, 34, 252);
 
     box-shadow:
       0 0 .5rem #fff,
@@ -109,33 +57,6 @@ h1:focus {
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.tick-circle {
-  stroke-dasharray: 166;
-  stroke-dashoffset: 166;
-  transition: all 1s ease-out;
-}
-
-.tick-line {
-  stroke-dasharray: 48;
-  stroke-dashoffset: 48;
-  transition: all 0.3s ease-out;
-}
-
-.animate-tick .tick-circle {
-  stroke-dashoffset: 0;
-}
-
-.animate-tick .tick-line {
-  stroke-dashoffset: 0;
-}
-
-.remove {
-  background-color: #fff!important;
-  color: aqua;
-  border-color: #08f;
-
 }
 
 .glow {

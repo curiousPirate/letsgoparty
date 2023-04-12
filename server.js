@@ -14,7 +14,7 @@ app.get("/search", async (req, res) => {
 
   const url = `https://serpapi.com/search?q=${query}&engine=google_events&htichips=${filter}&start=${
     (pageNumber - 1) * 10
-  }&source=nodejs&output=json&api_key=4d4f1a185a4e0acb10682c3138690aab6dc19eea1df2a242b99f86a4c8bb4a9e`;
+  }&source=nodejs&output=json&api_key=b40cf362d7bd15ae459eac770677ffc8e1e890ac7291ecb0dc55b3b6cee66b70`;
 
   try {
     const response = await fetch(url);
