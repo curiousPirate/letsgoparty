@@ -10,7 +10,7 @@ const SearchButtons = ({ setFilter }) => {
   };
 
   return (
-    <div className="m-6">
+    <div className="p-6 flex justify-center">
       <select
         className="bg-cyan-950 hover:bg-slate-700 hover:text-white text-sm text-white py-1 px-2 rounded-xl border-none"
         onChange={handleSelectChange}

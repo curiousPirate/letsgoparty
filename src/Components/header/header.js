@@ -78,24 +78,24 @@ export default function Header() {
             </li>
             <li className="my-8 text-4xl cursor-pointer">
               <Link
-                to="faves"
+                to="bucket-list"
                 smooth={true}
                 offset={-100}
                 duration={500}
                 onClick={closeMenu}
               >
-                FAVOURITES
+                BUCKET LIST
               </Link>
             </li>
             <li className="my-8 text-4xl cursor-pointer">
               <Link
-                to="contact-us"
+                to="newsletter"
                 smooth={true}
                 offset={-100}
                 duration={500}
                 onClick={closeMenu}
               >
-                CONTACT US
+                NEWSLETTER
               </Link>
             </li>
           </ul>

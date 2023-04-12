@@ -17,19 +17,24 @@ function SavedCards() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto mt-10" id="faves">
-      <div
-        style={{
-          backgroundImage: `url("https://source.unsplash.com/1600x900/?party")`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100%",
-          borderRadius: "10%"
-        }}
-      >
-        <h1 className="text-0">#</h1>
+    <div className="max-w-4xl mx-auto my-10" id="bucket-list">
+      <div>
+        <h2
+          className="text-3xl font-bold mb-8 text-white my-6 underline
+        underline-offset-8 text-center p-4"
+        >
+          BUCKET LIST
+        </h2>
       </div>
       {savedCards.length === 0 && (
-        <p className="text-center text-lg">So empty! Go ahead and click on the beer icon to save it to the bucket list!</p>
+        <h3 className="text-justify text-xl p-8 text-white">
+          "Don't let your bucket list stay empty! Take a sip of adventure and
+          click on that beer icon to add it to your list. Let's make some
+          unforgettable memories and cheers to life's greatest moments. You
+          won't regret it - trust us, your future self will thank you for taking
+          the plunge! So go ahead, add that brew to your bucket list and let the
+          good times roll!"
+        </h3>
       )}
 
       {savedCards.map((savedCard) => (

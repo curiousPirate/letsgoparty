@@ -6,8 +6,7 @@ body {
   background-color: #083344;
 }
 
-h1 {
-  padding: 4rem 6rem 5.5rem;
+.bucketList {
   border: 0.4rem solid #fff;
   border-radius: 2rem;
   text-transform: uppercase;
@@ -28,10 +27,10 @@ h1 {
     box-shadow:
       0 0 .5rem #fff,
       inset 0 0 .5rem #fff,
-      0 0 2rem #08f,
-      inset 0 0 2rem #08f,
-      0 0 4rem #08f,
-      inset 0 0 4rem #08f;
+      0 0 2rem #083344,
+      inset 0 0 2rem #083344,
+      0 0 4rem #083344,
+      inset 0 0 4rem #083344;
   }
 
   20%,

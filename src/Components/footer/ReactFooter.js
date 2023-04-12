@@ -1,9 +1,7 @@
-import ContactUs from "../contactus/ContactUs";
-
 const ReactFooter = () => {
   return (
     <div>
-      <div className="flex flex-col-reverse items-center justify-around">
+      <div className="flex flex-col-reverse items-center justify-around p-10">
         <div>
           <img
             src={require("../design/logo.png")}
@@ -11,12 +9,9 @@ const ReactFooter = () => {
             alt="logo"
           />
         </div>
-        <div className="w-full">
-          <ContactUs />
-        </div>
       </div>
       <section className="bg-cyan-950">
-        <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <div className="max-w-screen-xl px-4 pb-12 mx-auto overflow-hidden sm:px-6 lg:px-8">
           <div className="flex justify-center mt-8 space-x-6">
             <a
               href="https://github.com/curioushumans"

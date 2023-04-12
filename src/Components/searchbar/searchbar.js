@@ -11,6 +11,7 @@ const SearchBar = () => {
   const [showComponents, setShowComponents] = useState(false);
   const [filter, setFilter] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
+  // const [isSticky, setIsSticky] = useState(false);
 
   const API_BASE_URL = "";
 
@@ -33,6 +34,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     search(query, filter, pageNumber);
+  
   }, [filter, pageNumber]);
 
   const handleInputChange = (event) => {
@@ -58,15 +60,34 @@ const SearchBar = () => {
       .scrollIntoView({ behavior: "smooth" });
   };
 
+    // useEffect(() => {
+    //   function handleScroll() {
+    //     if (window.pageYOffset > 150) {
+    //       setIsSticky(true);
+    //     } else {
+    //       setIsSticky(false);
+    //     }
+    //   }
+
+    //   window.addEventListener("scroll", handleScroll);
+
+    //   return () => {
+    //     window.removeEventListener("scroll", handleScroll);
+    //   };
+    // }, []);
+
+    // const searchClassName = isSticky ? "fixed top-10 w-auto sm:w-full" : "";
+
   return (
     <div>
       <div className="h-fit flex flex-col justify-center" id="search-btn">
         <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto ">
-          <div
-            className="overflow-hidden z-0 rounded-full p-3 w-10/12"
-            id="stickySearch"
-            style={{ position: "absolute", top: 20, zIndex: 50 }}
-          >
+          <div className="overflow-hidden rounded-full p-3 z-50 sticky top-0">
+            {/* <div
+              className={`${searchClassName}`}
+              id="stickySearch"
+              style={{ zIndex: 50 }}
+            > */}
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -79,7 +100,6 @@ const SearchBar = () => {
                 placeholder="Search Events, Clubs, Raves & much more!"
                 className="rounded-full flex-1 px-6 py-4 text-black focus:outline-none"
                 aria-label="Search"
-                id="search-button"
                 value={query}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
@@ -102,22 +122,22 @@ const SearchBar = () => {
                 </svg>
               </button>
             </form>
-            <div className="glow glow-1 z-10 animate-glow1 bg-pink-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-            <div className="glow glow-2 z-20 animate-glow2 bg-purple-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-            <div className="glow glow-3 z-30 animate-glow3 bg-yellow-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-            <div className="glow glow-4 z-40 animate-glow4 bg-blue-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+            {/* <div className="glow glow-1 z-10 animate-glow1 bg-pink-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-2 z-20 animate-glow2 bg-purple-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-3 z-30 animate-glow3 bg-yellow-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-4 z-40 animate-glow4 bg-blue-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div> */}
           </div>
         </div>
       </div>
+      {/* </div> */}
       {showComponents && (
         <>
-          <div className="flex justify-center">
-            <SearchButtons setFilter={handleButtonClick} />
-          </div>
-          <div className="flex flex-wrap justify-center flex-col items-stretch h-full z-10">
+          <SearchButtons setFilter={handleButtonClick} />
+
             {Array.isArray(results) &&
               results.map((result) => <Card key={result.id} {...result} />)}
-          </div>
+
+
           <PageNumbers
             query={query}
             setResults={setResults}
