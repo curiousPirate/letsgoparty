@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Card from "../cards/Card";
 import SearchButtons from "../searchbuttons/SearchButtons";
@@ -133,11 +134,10 @@ const SearchBar = () => {
       {showComponents && (
         <>
           <SearchButtons setFilter={handleButtonClick} />
-
+          <div>
             {Array.isArray(results) &&
               results.map((result) => <Card key={result.id} {...result} />)}
-
-
+          </div>
           <PageNumbers
             query={query}
             setResults={setResults}
