@@ -55,7 +55,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
   const handlePageClick = (page) => {
     setPageNumber(page);
     search(query, filter, page);
-    document.getElementById("search-button").scrollIntoView({ behavior: "smooth" });
+    document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
   };
 
   // useEffect(() => {
@@ -80,7 +80,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     <div>
       <div className="h-fit flex flex-col justify-center" id="search-btn">
         <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto ">
-          <div className="relative">
+          <div className="relative" id="intro">
             <div className="bg-sky-950 p-6 rounded-md shadow-lg mx-auto m-10">
               <h2 className="text-2xl font-bold mb-4 text-white">
                 Discover the Best of the City
@@ -129,7 +129,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
                 onKeyDown={handleKeyDown}
               />
               <button
-                className="text-cyan-950 p-4 rounded-full hover:text-white hover:bg-sky-950 ml-2 bg-sky-900"
+                className="p-4 rounded-full text-white bg-sky-950 ml-2 hover:bg-sky-900"
                 type="button"
                 onClick={() => search(query, "", "1")}
               >
