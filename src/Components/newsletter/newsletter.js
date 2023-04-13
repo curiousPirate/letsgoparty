@@ -99,7 +99,7 @@ function Newsletter() {
           />
           <button
             type="submit"
-            className="w-full bg-cyan-950 rounded text-base font-medium leading-none text-white p-5 uppercase mt-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-900"
+            className="w-full bg-cyan-950 rounded-xl text-base font-medium leading-none text-white p-5 uppercase mt-4 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-900"
           >
             Subscribe
           </button>

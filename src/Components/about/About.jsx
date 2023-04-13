@@ -17,22 +17,25 @@ const About = () => {
           <div className="shadow-2xl rounded-lg w-full sm:w-4/5 md:h-96 lg:h-full bg-cover bg-center flex sm:flex-row flex-col lg:m-100">
             <div className="sm:w-1/2 flex flex-col justify-end">
                 <div className="border-l-4 border-gray-400 pl-6">
-                  <h2 className="italic text-cyan-950 text-5xl sm:text-4xl md:text-2xl lg:text-6xl uppercase font-semibold">
-                  Used by nomads across the world!
+                  <h2 className="italic text-slate-900 text-5xl sm:text-4xl md:text-2xl lg:text-6xl uppercase font-semibold">
+                  <br></br>Used by nomads across the world!
                   </h2>
                 </div>
               <div className="border-t-4 border-gray-400 w-4/5 mx-auto my-4 sm:my-8"></div>
             </div>
-            <div className="sm:w-1/2 bg-cyan-950 bg-opacity-50 p-8 rounded-lg flex flex-col justify-end">
+            <div className="sm:w-1/2 bg-slate-900 bg-opacity-50 p-8 rounded-lg flex flex-col justify-end">
               <h3 className="text-white text-lg md:text-xl lg:text-xl text-justify">
                 Whether you're looking for the hottest events, the trendiest clubs, unforgettable concerts, wild raves, or mouth-watering food events, we've got you covered. Our app is your ultimate guide to the best experiences the world has to offer. We guarantee you'll love life even more after using it! Experience life!
               </h3>
-              <button className="opacity-75 bg-gray-100 hover:bg-cyan-900 hover:text-white text-sm font-bold py-2 px-4 rounded inline-flex items-center self-end" type="button" onClick={() => scrollToSearch()}>
+              <div className="pt-2">
+      <button className="opacity-75 bg-gray-100 hover:bg-slate-900 hover:text-white text-sm font-bold py-2 px-4 rounded inline-flex items-center self-end" type="button" onClick={() => scrollToSearch()}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>GET STARTED!</span>
               </button>
+              </div>
+              
             </div>
           </div>
         </div>

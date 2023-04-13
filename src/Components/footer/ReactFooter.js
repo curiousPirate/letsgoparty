@@ -10,7 +10,7 @@ const ReactFooter = () => {
           />
         </div>
       </div>
-      <section className="bg-cyan-950">
+      <section className="bg-slate-950">
         <div className="max-w-screen-xl px-4 pb-12 mx-auto overflow-hidden sm:px-6 lg:px-8">
           <div className="flex justify-center mt-8 space-x-6">
             <a

@@ -65,7 +65,7 @@ function Card({
           </div>
           <button
             type="button"
-            className=" bg-cyan-950 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
+            className=" bg-slate-900 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
           >
             <a href={link} target="_blank" rel="noopener noreferrer">
               More Info

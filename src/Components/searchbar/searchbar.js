@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Card from "../cards/Card";
 import SearchButtons from "../searchbuttons/SearchButtons";
 import PageNumbers from "../pagenumbers/PageNumbers";
@@ -9,7 +9,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState([]);
   const [showComponents, setShowComponents] = useState(false);
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState("date:today");
   const [pageNumber, setPageNumber] = useState(1);
   // const [isSticky, setIsSticky] = useState(false);
 
@@ -32,10 +32,10 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     setShowComponents(true);
   };
 
-  useEffect(() => {
-    search(query, filter, pageNumber);
-    /* eslint-disable react-hooks/exhaustive-deps */
-  }, [filter, pageNumber]);
+  // useEffect(() => {
+  //   search(query, filter, pageNumber);
+  //   /* eslint-disable react-hooks/exhaustive-deps */
+  // }, [filter, pageNumber]);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
@@ -43,7 +43,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      search(query, filter, 1);
+      search(query, "date:today", 1);
     }
   };
 
@@ -80,6 +80,31 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     <div>
       <div className="h-fit flex flex-col justify-center" id="search-btn">
         <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto ">
+          <div className="relative">
+            <div className="bg-sky-950 p-6 rounded-md shadow-lg mx-auto m-10">
+              <h2 className="text-2xl font-bold mb-4 text-white">
+                Discover the Best of the City
+              </h2>
+              <p className="text-white leading-relaxed">
+                When embarking on a journey to a new destination, it's natural
+                to feel curious about what the city has in store for you.
+              </p>
+              <p className="text-white leading-relaxed mt-4">
+                With the power of a robust search engine, you can easily access
+                a treasure trove of information about all the hottest happenings
+                in the city. From thrilling raves to tantalizing food events,
+                you can explore an array of exciting activities that will leave
+                you spoilt for choice.
+              </p>
+              <p className="text-white leading-relaxed mt-4">
+                You can use the search engine to get concerts, clubs, raves and
+                food events near you or simply mention "Events in Amsterdam" if
+                you are planning for a vacation & filter out when you are
+                planning.
+              </p>
+            </div>
+          </div>
+
           <div className="relative overflow-hidden rounded-full p-3 z-60">
             {/* <div
               className={`${searchClassName}`}
@@ -91,7 +116,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
                 event.preventDefault();
                 search(query, filter, pageNumber);
               }}
-              className="relative appearance-none bg-transparent z-40 rounded-full flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-2 px-2"
+              className="relative overflow-hidden appearance-none bg-transparent z-40 rounded-full flex items-center justify-between bg-sky-950 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-2 px-2"
               id="search-button"
             >
               <input
@@ -104,7 +129,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
                 onKeyDown={handleKeyDown}
               />
               <button
-                className="text-cyan-950 p-4 bg-white rounded-full hover:text-white hover:bg-blue-400 ml-2"
+                className="text-cyan-950 p-4 rounded-full hover:text-white hover:bg-sky-950 ml-2 bg-sky-900"
                 type="button"
                 onClick={() => search(query, "", "1")}
               >
@@ -121,10 +146,10 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
                 </svg>
               </button>
             </form>
-            <div className="glow glow-1 z-3 animate-glow1 bg-pink-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-2 z-2 animate-glow2 bg-purple-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-3 z-1 animate-glow3 bg-yellow-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-4 z-0 animate-glow4 bg-blue-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+            <div className="glow glow-1 z-0 animate-glow1 bg-rose-950 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+            <div className="glow glow-2 z-2 animate-glow2 bg-pink-50 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+            <div className="glow glow-3 z-1 animate-glow3 bg-sky-50 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+            <div className="glow glow-4 z-3 animate-glow4 bg-sky-950 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
           </div>
         </div>
       </div>

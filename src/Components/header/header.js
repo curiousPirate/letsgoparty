@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed w-full z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6 top-0">
+    <div className="fixed w-full z-50 flex items-center justify-between bg-slate-900 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6 top-0">
       <img
         src={require("../design/logo.png")}
         className="w-20 h-20"
@@ -112,7 +112,7 @@ export default function Header() {
         height: 100vh;
         top: 0;
         left: 0;
-        background-color: rgba(8, 51, 68);
+        background-color: #0f172a;
         backdrop-filter: blur(10px);
         z-index: 10;
         display: flex;

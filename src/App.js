@@ -14,10 +14,13 @@ const [setFilter] = useState("");
     <div className="App">
       <Header />
       <About />
-        <div className="bg-tiber-950">
-          <SearchBar setFilter={setFilter} />
-        </div>
-      <SavedCards />
+      <div className="bg-slate-900">
+        <SearchBar setFilter={setFilter} />
+      </div>
+      <div className="bg-sky-950">
+        <SavedCards />
+      </div>
+
       <Newsletter />
       <ReactFooter />
     </div>
