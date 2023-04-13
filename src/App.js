@@ -17,13 +17,13 @@ const [setFilter] = useState("");
       <div className="bg-gradient-to-b from-slate-950 to-sky-950 bg-no-repeat bg-bottom">
         <SearchBar setFilter={setFilter} />
       </div>
-      {/* <div className="bg-gradient-to-t from-sky-950 to-white bg-no-repeat bg-bottom"> */}
-      <SavedCards />
-      {/* </div> */}
-      <div className="bg-gradient-to-t from-white to-sky-950 bg-no-repeat bg-bottom">
+      <div className="bg-gradient-to-b from-sky-950 to-white bg-no-repeat bg-bottom">
+        <SavedCards />
+      </div>
+      <div className="bg-gradient-to-b from-white to-sky-950 bg-no-repeat bg-bottom">
         <Newsletter />
       </div>
-      <div className="bg-gradient-to-b from-white to-sky-950 bg-no-repeat bg-top">
+      <div className="bg-gradient-to-t from-sky-950 to-sky-950 bg-no-repeat bg-bottom">
         <ReactFooter />
       </div>
     </div>
