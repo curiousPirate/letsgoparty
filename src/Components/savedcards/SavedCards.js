@@ -17,7 +17,7 @@ function SavedCards() {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto my-10" id="bucket-list">
+    <div className="max-w-4xl mx-auto mt-10" id="bucket-list">
       <div>
         <h2
           className="text-3xl font-bold mb-8 text-white my-6 underline

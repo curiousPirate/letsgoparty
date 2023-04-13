@@ -34,7 +34,7 @@ function Newsletter() {
 
   return (
     <div
-      className="w-full p-6 flex flex-col xl:items-stretch justify-between xl:flex-row bg-white"
+      className="w-full p-6 flex flex-col xl:items-stretch justify-between xl:flex-row"
       id="newsletter"
     >
       <div className="xl:w-1/2 md:mb-14 xl:mb-0 relative h-auto flex items-center justify-center">
@@ -45,10 +45,10 @@ function Newsletter() {
         />
       </div>
       <div className="w-full xl:w-1/2 xl:pl-40 xl:py-28">
-        <h1 className="text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-gray-800 mb-4 text-center xl:text-left md:mt-0 mt-4">
+        <h1 className="text-2xl md:text-4xl xl:text-5xl font-bold leading-10 text-slate-950 mb-4 text-center xl:text-left md:mt-0 mt-4">
           Today is your chance!
         </h1>
-        <p className="text-base leading-normal text-gray-600 text-justify xl:text-left pb-5">
+        <p className="text-base leading-normal text-slate-950 text-justify xl:text-left pb-5">
           "Don't be a wallflower! Tell us what you really want, and we'll make
           it happen! We want to know all about your favorite party spots,
           artists, and events, so we can keep you updated on the wildest and
