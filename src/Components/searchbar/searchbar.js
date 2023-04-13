@@ -131,7 +131,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
               <button
                 className="p-4 rounded-full text-white bg-sky-950 ml-2 hover:bg-sky-900"
                 type="button"
-                onClick={() => search(query, "", "1")}
+                onClick={() => search(query, filter, "1")}
               >
                 <svg
                   fill="none"

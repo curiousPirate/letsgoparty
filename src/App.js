@@ -20,7 +20,6 @@ const [setFilter] = useState("");
       <div className="bg-sky-950">
         <SavedCards />
       </div>
-
       <Newsletter />
       <ReactFooter />
     </div>
