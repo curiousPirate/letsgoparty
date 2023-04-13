@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../cards/Card";
 import SearchButtons from "../searchbuttons/SearchButtons";
 import PageNumbers from "../pagenumbers/PageNumbers";
@@ -32,10 +32,10 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     setShowComponents(true);
   };
 
-  // useEffect(() => {
-  //   search(query, filter, pageNumber);
-  //   /* eslint-disable react-hooks/exhaustive-deps */
-  // }, [filter, pageNumber]);
+  useEffect(() => {
+    search(query, filter, pageNumber);
+    /* eslint-disable react-hooks/exhaustive-deps */
+  }, []);
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
