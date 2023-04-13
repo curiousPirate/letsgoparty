@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Card from "../cards/Card";
 import SearchButtons from "../searchbuttons/SearchButtons";
@@ -6,8 +5,8 @@ import PageNumbers from "../pagenumbers/PageNumbers";
 import fetch from "node-fetch";
 
 
-const SearchBar = () => {
-  const [query, setQuery] = useState("California");
+const SearchBar = ({ initialQuery = "Events in India" }) => {
+  const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState([]);
   const [showComponents, setShowComponents] = useState(false);
   const [filter, setFilter] = useState("");
@@ -35,7 +34,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     search(query, filter, pageNumber);
-  
+    /* eslint-disable react-hooks/exhaustive-deps */
   }, [filter, pageNumber]);
 
   const handleInputChange = (event) => {
@@ -48,42 +47,40 @@ const SearchBar = () => {
     }
   };
 
-  const handleButtonClick = () => {
-    setFilter("");
-    search(query, "", 1);
+  const handleButtonClick = (filter) => {
+    setFilter(filter);
+    search(query, filter, 1);
   };
 
   const handlePageClick = (page) => {
     setPageNumber(page);
     search(query, filter, page);
-    document
-      .getElementById("search-button")
-      .scrollIntoView({ behavior: "smooth" });
+    document.getElementById("search-button").scrollIntoView({ behavior: "smooth" });
   };
 
-    // useEffect(() => {
-    //   function handleScroll() {
-    //     if (window.pageYOffset > 150) {
-    //       setIsSticky(true);
-    //     } else {
-    //       setIsSticky(false);
-    //     }
-    //   }
+  // useEffect(() => {
+  //   function handleScroll() {
+  //     if (window.pageYOffset > 150) {
+  //       setIsSticky(true);
+  //     } else {
+  //       setIsSticky(false);
+  //     }
+  //   }
 
-    //   window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    //   return () => {
-    //     window.removeEventListener("scroll", handleScroll);
-    //   };
-    // }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-    // const searchClassName = isSticky ? "fixed top-10 w-auto sm:w-full" : "";
+  // const searchClassName = isSticky ? "fixed top-10 w-auto sm:w-full" : "";
 
   return (
     <div>
       <div className="h-fit flex flex-col justify-center" id="search-btn">
         <div className="relative p-4 sm:p-12 w-auto sm:w-full sm:mx-auto ">
-          <div className="overflow-hidden rounded-full p-3 z-50 sticky top-0">
+          <div className="relative overflow-hidden rounded-full p-3 z-60">
             {/* <div
               className={`${searchClassName}`}
               id="stickySearch"
@@ -94,7 +91,8 @@ const SearchBar = () => {
                 event.preventDefault();
                 search(query, filter, pageNumber);
               }}
-              className="relative appearance-none bg-transparent rounded-full z-50 flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-2 px-2"
+              className="relative appearance-none bg-transparent z-40 rounded-full flex items-center justify-between bg-cyan-950 bg-opacity-80 backdrop-filter backdrop-blur-lg text-white py-2 px-2"
+              id="search-button"
             >
               <input
                 type="text"
@@ -123,10 +121,10 @@ const SearchBar = () => {
                 </svg>
               </button>
             </form>
-            {/* <div className="glow glow-1 z-10 animate-glow1 bg-pink-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-2 z-20 animate-glow2 bg-purple-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-3 z-30 animate-glow3 bg-yellow-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
-              <div className="glow glow-4 z-40 animate-glow4 bg-blue-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div> */}
+            <div className="glow glow-1 z-3 animate-glow1 bg-pink-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-2 z-2 animate-glow2 bg-purple-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-3 z-1 animate-glow3 bg-yellow-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
+              <div className="glow glow-4 z-0 animate-glow4 bg-blue-400 rounded-100 w-120 h-120 -top-10 -left-10 absolute"></div>
           </div>
         </div>
       </div>

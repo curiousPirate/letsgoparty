@@ -14,7 +14,7 @@ const [setFilter] = useState("");
     <div className="App">
       <Header />
       <About />
-        <div className="bg-white">
+        <div className="bg-tiber-950">
           <SearchBar setFilter={setFilter} />
         </div>
       <SavedCards />
