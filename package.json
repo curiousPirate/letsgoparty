@@ -16,6 +16,7 @@
     "express": "^4.18.2",
     "fetch": "^1.1.0",
     "google-search-results-nodejs": "^2.1.0",
+    "pace-js": "^1.2.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

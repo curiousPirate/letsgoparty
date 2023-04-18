@@ -69,7 +69,7 @@ export default function Header() {
               <Link
                 to="search-button"
                 smooth={true}
-                offset={-100}
+                offset={-200}
                 duration={500}
                 onClick={closeMenu}
               >
@@ -91,7 +91,6 @@ export default function Header() {
               <Link
                 to="newsletter"
                 smooth={true}
-                offset={-100}
                 duration={500}
                 onClick={closeMenu}
               >

@@ -12,13 +12,18 @@ function Card({
 }) {
   const id = `${title}-${date}-${address}`;
 
+  function handleImageError(event) {
+    event.target.src = "./design/logo.png";
+  }
+
   return (
     <div className="p-8 sm:p-8">
       <div className="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-1 max-w-xs md:max-w-3xl mx-auto border border-white bg-white items-stretch h-full">
         <div className="w-full md:w-1/3 bg-white grid place-items-center object-cover">
           <img
-            src={image}
+            src="non-existent-image.jpg"
             alt={title}
+            onError={handleImageError}
             className="w-full h-fit object-cover rounded-lg sm:h-full sm:col-span-2 lg:col-span-full"
           />
         </div>
@@ -63,14 +68,14 @@ function Card({
           <div>
             <p className="md:text-lg text-gray-500 text-base">{description}</p>
           </div>
-          <button
-            type="button"
-            className=" bg-slate-900 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg"
-          >
-            <a href={link} target="_blank" rel="noopener noreferrer">
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <button
+              type="button"
+              className=" bg-slate-900 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg w-full"
+            >
               More Info
-            </a>
-          </button>
+            </button>
+          </a>
         </div>
       </div>
     </div>

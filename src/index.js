@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+// import './center-atom.css';
+import pace from "pace-js";
+
+pace.start();
+
 
 
 const rootElement = document.getElementById('root');

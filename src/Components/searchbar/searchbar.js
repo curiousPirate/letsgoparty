@@ -11,11 +11,12 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
   const [showComponents, setShowComponents] = useState(false);
   const [filter, setFilter] = useState("date:today");
   const [pageNumber, setPageNumber] = useState(1);
-  // const [isSticky, setIsSticky] = useState(false);
 
   const API_BASE_URL = "";
 
   const search = async (query, filter, pageNumber) => {
+
+
     const url = `${API_BASE_URL}/search?q=${query}&engine=google_events&htichips=${filter}&start=${
       (pageNumber - 1) * 10
     }&source=nodejs&output=json&api_key=b40cf362d7bd15ae459eac770677ffc8e1e890ac7291ecb0dc55b3b6cee66b70`;
@@ -31,6 +32,9 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     setResults(data.events_results);
     setShowComponents(true);
   };
+
+
+
 
   useEffect(() => {
     search(query, filter, pageNumber);
@@ -57,24 +61,6 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     search(query, filter, page);
     document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
   };
-
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     if (window.pageYOffset > 150) {
-  //       setIsSticky(true);
-  //     } else {
-  //       setIsSticky(false);
-  //     }
-  //   }
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // const searchClassName = isSticky ? "fixed top-10 w-auto sm:w-full" : "";
 
   return (
     <div>
@@ -106,11 +92,6 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
           </div>
 
           <div className="relative overflow-hidden rounded-full p-3 z-60">
-            {/* <div
-              className={`${searchClassName}`}
-              id="stickySearch"
-              style={{ zIndex: 50 }}
-            > */}
             <form
               onSubmit={(event) => {
                 event.preventDefault();
