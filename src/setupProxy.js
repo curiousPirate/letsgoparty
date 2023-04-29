@@ -11,7 +11,7 @@ module.exports = function (app) {
       },
       pathRewrite: (path, req) => {
         const { q, htichips, start } = req.query;
-        return `/search?q=${q}&engine=google_events&htichips=${htichips}&start=${start}&source=nodejs&output=json&api_key=b40cf362d7bd15ae459eac770677ffc8e1e890ac7291ecb0dc55b3b6cee66b70`;
+        return `/search?q=${q}&engine=google_events&htichips=${htichips}&start=${start}&source=nodejs&output=json&api_key=99e862960da1f6c3c8cfcc8f6ba4f35968cee4846f4411a8a8e75b8e697c3d9e`;
       },
     })
   );
