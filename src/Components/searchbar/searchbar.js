@@ -9,7 +9,7 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
   const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState([]);
   const [showComponents, setShowComponents] = useState(false);
-  const [filter, setFilter] = useState("date:today");
+  const [filter, setFilter] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
 
   const API_BASE_URL = "";
@@ -33,9 +33,6 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     setShowComponents(true);
   };
 
-
-
-
   useEffect(() => {
     search(query, filter, pageNumber);
     /* eslint-disable react-hooks/exhaustive-deps */
@@ -47,7 +44,8 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      search(query, "date:today", 1);
+      search(query, filter, 1);
+      setFilter([]);
     }
   };
 
@@ -61,6 +59,10 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
     search(query, filter, page);
     document.getElementById("intro").scrollIntoView({ behavior: "smooth" });
   };
+
+    const resetFilters = () => {
+      setFilter([]); // Reset the filters to empty array
+    };
 
   return (
     <div>
@@ -137,7 +139,10 @@ const SearchBar = ({ initialQuery = "Events in India" }) => {
       {/* </div> */}
       {showComponents && (
         <>
-          <SearchButtons setFilter={handleButtonClick} />
+          <SearchButtons
+            setFilter={handleButtonClick}
+            resetFilters={resetFilters}
+          />
           <div>
             {Array.isArray(results) &&
               results.map((result) => <Card key={result.id} {...result} />)}

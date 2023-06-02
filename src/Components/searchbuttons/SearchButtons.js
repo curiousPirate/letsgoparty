@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SearchButtons = ({ setFilter }) => {
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState("");
 
   const handleSelectChange = (event) => {
     const value = event.target.value;
@@ -14,7 +14,9 @@ const SearchButtons = ({ setFilter }) => {
       <select
         className="bg-sky-950 hover:bg-slate-700 hover:text-white text-sm text-white py-6 px-8 rounded-xl border-none flex justify-start"
         onChange={handleSelectChange}
+        value={selectedButton} // Add this line to set the selected value
       >
+        <option value="">When do you wanna plan?</option>
         <option
           value="date:today"
           className={`${
