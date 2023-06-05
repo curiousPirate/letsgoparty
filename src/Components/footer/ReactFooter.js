@@ -14,7 +14,7 @@ const ReactFooter = () => {
         <div className="max-w-screen-xl px-4 pb-12 mx-auto overflow-hidden sm:px-6 lg:px-8">
           <div className="flex justify-center mt-8 space-x-6">
             <a
-              href="https://github.com/curioushumans"
+              href="https://github.com/curiousPirate"
               target="_blank"
               rel="noreferrer noopener"
               className="text-gray-400 hover:text-gray-500"

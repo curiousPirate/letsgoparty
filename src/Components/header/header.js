@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <div className="fixed w-full z-50 flex items-center justify-between bg-slate-900 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-6 px-6 top-0">
+    <div className="fixed w-full z-50 flex items-center justify-between bg-slate-900 bg-opacity-80 backdrop-filter backdrop-blur-xl text-white py-2 px-6 top-0">
       <img
         src={require("../design/logo.png")}
         className="w-20 h-20"
